@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Blanka';
+  src: url('./assets/Blanka.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Light Mode
+  --color: #ecf0f3;
+  --shadow-light: #fff;
+  --shadow-dark: #d1d9e6;
+  */
+  /*Dark Mode
+  --color: #292d32;
+  --shadow-light: #30343a;
+  --shadow-dark: #2a2d32;
+  */
+  --color: #292d32;
+  --shadow-light: #30343a;
+  --shadow-dark: #212327;
+}
+
+body {
+  margin: 0px;
+  overflow: hidden;
+  background: var(--color);
+}
+
+.paralelogram {
+  position: fixed;
+  transform: rotate(32deg);
+  background: var(--color);
+  border-radius: 16px;
+  -webkit-box-shadow: 4px 4px 8px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
+  box-shadow: 4px 4px 8px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
+
+}
+
+.text {
+  font-family: "Blanka";
+  font-size: 5em;
+  letter-spacing: 0.2em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: translate(-50%, -110%);
+  color: var(--color);
+  text-shadow: 4px 4px 8px var(--shadow-dark), -2px -2px 4px var(--shadow-light);
+}
