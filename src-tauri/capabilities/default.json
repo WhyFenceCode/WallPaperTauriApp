@@ -6,6 +6,7 @@
   "permissions": [
     "core:default",
     "opener:default",
+    "wallpaper:default",
     "core:window:allow-set-fullscreen"
   ]
 }

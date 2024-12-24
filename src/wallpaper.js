@@ -6,7 +6,7 @@ let isWallpaper = true;
 
 await getCurrentWindow().setFullscreen(true);
 
-wallpaper.attach();
+wallpaper.attach("main");
 
 await register('CommandOrControl+Alt+W', () => {
     if (isWallpaper) {
