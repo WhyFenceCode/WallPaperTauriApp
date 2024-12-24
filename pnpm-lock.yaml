@@ -15,8 +15,8 @@ dependencies:
     specifier: ^2
     version: 2.2.2
   tauri-plugin-wallpaper:
-    specifier: 2.0.0-beta
-    version: 2.0.0-beta(@tauri-apps/api@2.1.1)
+    specifier: '2'
+    version: 2.0.0(@tauri-apps/api@2.1.1)
 
 devDependencies:
   '@tauri-apps/cli':
@@ -619,8 +619,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /tauri-plugin-wallpaper@2.0.0-beta(@tauri-apps/api@2.1.1):
-    resolution: {integrity: sha512-PCid10WcxHzU3J3Cmzd2bwiXefoHc5ZV8Bw9z4NlkN/3L4E1NE2Jwh7sbr8MnvpSQUUQRbTgEG/5sjsP3ccFbA==}
+  /tauri-plugin-wallpaper@2.0.0(@tauri-apps/api@2.1.1):
+    resolution: {integrity: sha512-q+JBl1gBTrG7RFTRm3/vbzyMWWUz+//G65V/ViU83KvK7wj5pwgj1YyNbwAXrAr2nwTK2ICP4gOlTvLH1vSPCA==}
     peerDependencies:
       '@tauri-apps/api': '>=2'
     dependencies:

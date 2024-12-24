@@ -5,8 +5,9 @@ import { getCurrentWindow } from '@tauri-apps/api/window';
 let isWallpaper = true;
 
 await getCurrentWindow().setFullscreen(true);
+canStart = true;
 
-wallpaper.attach("main");
+wallpaper.attach();
 
 await register('CommandOrControl+Alt+W', () => {
     if (isWallpaper) {

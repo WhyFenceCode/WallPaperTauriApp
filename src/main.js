@@ -8,13 +8,15 @@ const moveAngle = 32;
 const speedX = 1;
 const speedY = 0.62486;
 const speedMultiplier = 56;
-const upOffset = heightOffset(window.innerWidth);
-const rowCount = Math.ceil((window.innerHeight + upOffset) / rowHeight);
-const parallelogramCount = Math.ceil((rowCount / 3) * (window.innerWidth / 256) * 0.7);
+let upOffset = heightOffset(window.innerWidth);
+let rowCount = Math.ceil((window.innerHeight + upOffset) / rowHeight);
+let parallelogramCount = Math.ceil((rowCount / 3) * (window.innerWidth / 256) * 0.7);
 let rowClears = [];
 let spawned = 0;
 let startSpawnsInterval = null;
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+let canStart = false;
 
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
@@ -153,5 +155,23 @@ function startSpawning() {
   startSpawnsInterval = setInterval(spawnAtStart, 1000);
 }
 
-initiateRowClears();
-startSpawning();
+class Starter {
+  constructor() {
+    requestAnimationFrame(this.starterFrame.bind(this));
+  }
+
+  starterFrame() {
+
+    if (!canStart) {
+      requestAnimationFrame(this.starterFrame.bind(this));
+    } else {
+      upOffset = heightOffset(window.innerWidth);
+      rowCount = Math.ceil((window.innerHeight + upOffset) / rowHeight);
+      parallelogramCount = Math.ceil((rowCount / 3) * (window.innerWidth / 256) * 0.7);
+      initiateRowClears();
+      startSpawning();
+    }
+  }
+}
+
+new Starter();
